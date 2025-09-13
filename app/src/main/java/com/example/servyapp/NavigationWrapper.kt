@@ -12,13 +12,13 @@ import com.example.servyapp.presentation.signup.SignUpScreen
 fun NavigationWrapper(navHostController: NavHostController) {
     NavHost(navController = navHostController, startDestination = "initial") {
         composable("initial") {
-            InitialScreen()
+            InitialScreen(navController = navHostController)
         }
         composable("loginScreen") {
-            LoginScreen()
+            LoginScreen(navController = navHostController)
         }
-        composable("SignUpScreen") {
-            SignUpScreen()
+        composable("signUpScreen") {
+            SignUpScreen(navController = navHostController)
         }
     }
 }

@@ -19,9 +19,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.servyapp.R
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun InitialScreen() {
+fun InitialScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -47,7 +49,7 @@ fun InitialScreen() {
 
         Button(
             onClick = {
-                // TODO: Aquí se agrega la lógica de navegación a la pantalla de inicio de sesión
+                navController.navigate("loginScreen")
             },
             modifier = Modifier.height(56.dp)
         ) {
@@ -58,7 +60,7 @@ fun InitialScreen() {
 
         Button(
             onClick = {
-                // TODO: Aquí se agrega la lógica de navegación a la pantalla de registro
+                navController.navigate("signUpScreen")
             },
             modifier = Modifier.height(56.dp)
         ) {
@@ -70,5 +72,5 @@ fun InitialScreen() {
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
 fun InitialScreenPreview() {
-    InitialScreen()
+    InitialScreen(navController = rememberNavController())
 }
